@@ -13,27 +13,34 @@ const contactDetails = [
   {
     Icon: FaPhoneAlt,
     label: "Phone",
-    value: "+855 93 457 773 (Cambodia)",
+    value: "+855 93 457 773",
   },
   {
     Icon: FaTelegramPlane,
     label: "Telegram",
-    value: "093 457 773 (Telegram)",
+    value: "093 457 773",
   },
   {
     Icon: MdEmail,
     label: "Email",
-    value: "info@wonderpass.asia",
+    value: "info@TicketGateway.cambo",
   },
 ];
 
-const products = ["Invoicing Tool", "ABA QR API"];
+const products = ["RESTful API", "Customized API", "New Project", "Maintenance"];
+// RESTful API – Standard API design based on HTTP methods (GET, POST, etc.).
+// Customized API – Tailor-made API solutions based on specific client needs.
+// New Project – Complete development service for launching a new system or app.
+// Maintenance – Ongoing support, bug fixes, and updates for existing projects.
 
 const developers = [
   "API Integration",
   "Integration Guideline",
-  "Test Card Numbers",
+  "Bug Fixing"
 ];
+// API Integration – Helping developers integrate your ticket gateway APIs into their apps.
+// Integration Guideline – Providing docs, sample code, and best practices for using the API.
+// Bug Fixing – Supporting or resolving issues during integration or testing.
 
 const socialLinks = [
   {
@@ -155,7 +162,7 @@ export default function Footer() {
           <FooterList title="Supports" items={supports} />
 
           <div className="space-y-2 text-center md:text-left">
-            <p>© Live By Wonderpass. All rights reserved.</p>
+            <p>© Live By Ticket Gateway Platform. All rights reserved.</p>
 
             <nav className="flex justify-center md:justify-start gap-6 mt-4">
               <a
