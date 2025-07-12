@@ -2,8 +2,9 @@
 
 import type React from "react";
 import { useEffect } from "react";
-import { Toaster } from "sonner";
 import { initAuth } from "@/lib/auth";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function ClientLayout({
   children,
@@ -16,8 +17,9 @@ export default function ClientLayout({
 
   return (
     <>
+      <Navbar />
       {children}
-      <Toaster position="top-right" theme="light" richColors />
+      <Footer />
     </>
   );
 }
