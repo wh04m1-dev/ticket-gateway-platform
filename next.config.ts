@@ -3,7 +3,7 @@ import withFlowbiteReact from "flowbite-react/plugin/nextjs";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["127.0.0.1"],
+    domains: ["127.0.0.1", 'flowbite.com'],
   },
 };
 

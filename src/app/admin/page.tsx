@@ -1,9 +1,12 @@
-import React from "react";
-
-export default function AdminPage() {
+export default function AdminDashboard() {
   return (
-    <div>
-      <h1>Admin Dashboard</h1>
+    <div className="text-gray-900 dark:text-white">
+      <h1 className="text-3xl font-bold mb-6">
+        Welcome to the Admin Dashboard
+      </h1>
+      <p className="text-lg">
+        Use the sidebar to manage events, orders, settings, and more.
+      </p>
     </div>
   );
 }

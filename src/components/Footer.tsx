@@ -28,19 +28,12 @@ const contactDetails = [
 ];
 
 const products = ["RESTful API", "Customized API", "New Project", "Maintenance"];
-// RESTful API – Standard API design based on HTTP methods (GET, POST, etc.).
-// Customized API – Tailor-made API solutions based on specific client needs.
-// New Project – Complete development service for launching a new system or app.
-// Maintenance – Ongoing support, bug fixes, and updates for existing projects.
 
 const developers = [
   "API Integration",
   "Integration Guideline",
   "Bug Fixing"
 ];
-// API Integration – Helping developers integrate your ticket gateway APIs into their apps.
-// Integration Guideline – Providing docs, sample code, and best practices for using the API.
-// Bug Fixing – Supporting or resolving issues during integration or testing.
 
 const socialLinks = [
   {
