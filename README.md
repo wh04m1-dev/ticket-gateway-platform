@@ -1,4 +1,4 @@
-I want to build and deploy a full-featured Ticket Gateway Platform project using the following technologies and architecture:
+### Ticket Gateway Platform project using the following technologies and architecture:
 
 🔧 Tech Stack:
 
@@ -23,7 +23,7 @@ I want to build and deploy a full-featured Ticket Gateway Platform project using
 - Event listing and event details (Event Service)
 - Ticket booking and seat selection (Ticket Service)
 - Order history and invoice tracking (Order Service)
-- Payment handling (mock or real, via Payment Service)
+- Payment handling (real Payment Service)
 - Admin panel to manage events, users, and tickets (Admin Service)
 - Frontend for users and admins using Next.js
 
@@ -42,7 +42,7 @@ ticket-gateway-platform/
 ├── docker/ # Dockerfiles
 ├── jenkins/ # Jenkinsfile and deployment scripts
 ├── k8s/ # Kubernetes YAML files
-├── helm/ # Helm charts for deployment (optional)
+├── helm/ # Helm charts for deployment
 
 📄 CI/CD Pipeline (Jenkins):
 

@@ -6,7 +6,7 @@ import "./globals.css";
 import ClientLayout from "./clientLayout";
 
 export const metadata: Metadata = {
-  title: "Ticket Gateway | Cambodia's No.1 Online Ticket Gateway Platform",
+  title: "Ticket Gateway",
   description: "Gateway-based ticket booking app",
 };
 
