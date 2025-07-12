@@ -14,7 +14,7 @@ I want to build and deploy a full-featured Ticket Gateway Platform project using
 - SSL + Ingress: NGINX Ingress Controller with Let's Encrypt (for HTTPS)
 - Database: PostgreSQL for each microservice
 - Monitoring: Prometheus + Grafana
-- Logging: Loki or ELK Stack (optional)
+- Logging: Loki
 
 🎫 Functional Requirements:
 

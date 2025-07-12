@@ -1,8 +1,8 @@
-"use client"
-import { Search } from "lucide-react"
+"use client";
+import { Search } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input";
 
 export default function ServicesHero() {
   return (
@@ -14,8 +14,9 @@ export default function ServicesHero() {
             E-Ticket Provider
           </h1>
           <p className="text-xl text-gray-600 max-w-xl">
-            Here you&apos;ll find detailed documentation and references to help you integrate PayWay APIs on your
-            software solution to take online payments securely on any platform.
+            Here you&apos;ll find detailed documentation and references to help
+            you integrate PayWay APIs on your software solution to take online
+            payments securely on any platform.
           </p>
           <div className="relative max-w-xl">
             <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
@@ -31,10 +32,9 @@ export default function ServicesHero() {
 
         {/* Right Illustration */}
         <div className="relative flex justify-center lg:justify-end">
-        <DotLottieReact src="/service.lottie" loop autoplay />
+          <DotLottieReact src="/service.lottie" loop autoplay />
         </div>
       </div>
     </div>
-  )
+  );
 }
-

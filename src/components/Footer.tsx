@@ -29,26 +29,33 @@ const contactDetails = [
 
 const products = ["Invoicing Tool", "ABA QR API"];
 
-const developers = ["API Integration", "Integration Guideline", "Test Card Numbers"];
+const developers = [
+  "API Integration",
+  "Integration Guideline",
+  "Test Card Numbers",
+];
 
 const socialLinks = [
   {
     href: "https://facebook.com",
     label: "Facebook",
     icon: FaFacebook,
-    color: "text-blue-600 hover:text-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600",
+    color:
+      "text-blue-600 hover:text-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600",
   },
   {
     href: "https://youtube.com",
     label: "YouTube",
     icon: FaYoutube,
-    color: "text-red-600 hover:text-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600",
+    color:
+      "text-red-600 hover:text-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600",
   },
   {
     href: "https://linkedin.com",
     label: "LinkedIn",
     icon: FaLinkedin,
-    color: "text-blue-700 hover:text-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700",
+    color:
+      "text-blue-700 hover:text-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700",
   },
 ];
 
@@ -56,7 +63,10 @@ const supports = ["Help Center", "Plan Your Event", "Our Solutions"];
 
 function FooterList({ title, items }: { title: string; items: string[] }) {
   return (
-    <nav aria-labelledby={`footer-${title.toLowerCase()}`} className="space-y-4">
+    <nav
+      aria-labelledby={`footer-${title.toLowerCase()}`}
+      className="space-y-4"
+    >
       <h3
         id={`footer-${title.toLowerCase()}`}
         className="mb-4 font-semibold text-lg text-gray-900 dark:text-white"
@@ -95,7 +105,10 @@ export default function Footer() {
             <address className="not-italic space-y-4">
               {contactDetails.map(({ Icon, label, value }) => (
                 <div key={label} className="flex items-center gap-3">
-                  <Icon className="text-blue-600 w-6 h-6 flex-shrink-0" aria-hidden="true" />
+                  <Icon
+                    className="text-blue-600 w-6 h-6 flex-shrink-0"
+                    aria-hidden="true"
+                  />
                   <span>{value}</span>
                 </div>
               ))}

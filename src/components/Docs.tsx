@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const sections = [
   {
@@ -18,7 +18,7 @@ const sections = [
       { href: "/payment-link", label: "Payment Link" },
     ],
   },
-]
+];
 
 export default function DocumentationNav() {
   return (
@@ -26,7 +26,9 @@ export default function DocumentationNav() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {sections.map((section) => (
           <div key={section.title} className="space-y-4">
-            <h2 className="text-xl font-semibold text-teal-900">{section.title}</h2>
+            <h2 className="text-xl font-semibold text-teal-900">
+              {section.title}
+            </h2>
             <div className="space-y-3">
               {section.links.map((link) => (
                 <Link
@@ -43,5 +45,5 @@ export default function DocumentationNav() {
         ))}
       </div>
     </div>
-  )
+  );
 }

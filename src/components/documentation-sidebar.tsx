@@ -1,9 +1,13 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { ChevronDown } from "lucide-react"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ChevronDown } from "lucide-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const sidebarItems = [
   { href: "/general", label: "General" },
@@ -18,16 +22,18 @@ const sidebarItems = [
   { href: "/exchange-rate", label: "Exchange Rate" },
   { href: "/payment-link", label: "Payment Link" },
   { href: "/merchant-portal", label: "Merchant Portal" },
-]
+];
 
 export function DocumentationSidebar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <div className="w-64 min-h-screen border-r bg-gray-50">
       <Collapsible defaultOpen className="p-4">
         <CollapsibleTrigger className="flex items-center justify-between w-full p-2 text-left rounded-md hover:bg-gray-100 group">
-          <span className="text-lg font-semibold text-blue-600">API Integration</span>
+          <span className="text-lg font-semibold text-blue-600">
+            API Integration
+          </span>
           <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
         </CollapsibleTrigger>
         <CollapsibleContent className="mt-2 space-y-1">
@@ -36,7 +42,9 @@ export function DocumentationSidebar() {
               key={item.href}
               href={item.href}
               className={`block px-2 py-1.5 text-sm rounded-md transition-colors ${
-                pathname === item.href ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-600 hover:bg-gray-100"
+                pathname === item.href
+                  ? "bg-blue-50 text-blue-600 font-medium"
+                  : "text-gray-600 hover:bg-gray-100"
               }`}
             >
               {item.label}
@@ -45,6 +53,5 @@ export function DocumentationSidebar() {
         </CollapsibleContent>
       </Collapsible>
     </div>
-  )
+  );
 }
-
