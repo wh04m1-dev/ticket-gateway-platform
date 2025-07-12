@@ -35,9 +35,6 @@ export default function AboutUsSection() {
               partners committed to delivering high-quality event services.
             </p>
           </div>
-
-          <div className="rounded-lg overflow-hidden w-full h-full mt-6 md:mt-0 flex justify-center items-center">
-          </div>
         </div>
       </div>
     </section>
