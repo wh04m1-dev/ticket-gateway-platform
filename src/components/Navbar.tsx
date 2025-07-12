@@ -84,8 +84,8 @@ export default function Navbar() {
               {[
                 { name: "Home", path: "/" },
                 { name: "About", path: "/about" },
-                { name: "Product", path: "/product" },
-                { name: "API Doc", path: "/apidoc" },
+                { name: "Products", path: "/product" },
+                { name: "DocsAPI", path: "/apidoc" },
               ].map(({ name, path }) => (
                 <li key={path}>
                   <Link
