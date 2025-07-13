@@ -1,10 +1,7 @@
 import type { NextConfig } from "next";
-import withFlowbiteReact from "flowbite-react/plugin/nextjs";
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: ["127.0.0.1", 'flowbite.com'],
-  },
+  /* config options here */
 };
 
-export default withFlowbiteReact(nextConfig);
+export default nextConfig;
