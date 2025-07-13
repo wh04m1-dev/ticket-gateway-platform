@@ -25,11 +25,6 @@ export default function Footer() {
                 Register
               </a>
             </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Generate API
-              </a>
-            </li>
           </ul>
         </div>
 
