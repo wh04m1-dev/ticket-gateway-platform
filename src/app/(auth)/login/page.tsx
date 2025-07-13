@@ -5,7 +5,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,7 +14,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
@@ -23,11 +21,10 @@ import { setUserData } from "@/lib/auth";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
+  const [rememberMe] = useState(false);
   const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -67,10 +64,8 @@ export default function LoginPage() {
     <div className="flex items-center justify-center min-h-screen p-4">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">Sign in</CardTitle>
-          <CardDescription>
-            Enter your email and password to access your account
-          </CardDescription>
+          <CardTitle className="text-2xl font-bold">Renew Token</CardTitle>
+          <CardDescription>Please fill in your information</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
@@ -84,65 +79,19 @@ export default function LoginPage() {
               <Input
                 id="email"
                 type="email"
-                placeholder="name@example.com"
+                placeholder="Your example"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
               />
             </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Password</Label>
-              </div>
-              <div className="relative">
-                <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="focus:border-teal-500 focus:ring-2 pr-10"
-                />
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="icon"
-                  className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent text-teal-600 hover:text-teal-800"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
-                  <span className="sr-only">
-                    {showPassword ? "Hide password" : "Show password"}
-                  </span>
-                </Button>
-                <Link
-                  href="#"
-                  className="absolute text-xs text-teal-600 hover:text-teal-800 hover:underline bottom-[-20px] right-0"
-                >
-                  Forgot password?
-                </Link>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox
-                id="remember"
-                className="border-teal-400 text-teal-600 focus:ring-teal-500/20"
-                checked={rememberMe}
-                onCheckedChange={(checked: boolean | "indeterminate") => {
-                  if (checked === "indeterminate") return;
-                  setRememberMe(checked);
-                }}
-              />
-              <Label htmlFor="remember" className="text-sm font-normal">
-                Remember me
-              </Label>
-            </div>
+            <p className="mt-4 text-start text-sm">
+              Don&apos;t have an account?{" "}
+              <Link href="/register" className="text-teal-800 hover:underline">
+                Register Now
+              </Link>
+            </p>
           </CardContent>
           <CardFooter className="flex flex-col mt-4">
             <Button
@@ -172,12 +121,6 @@ export default function LoginPage() {
                 "Sign in"
               )}
             </Button>
-            <p className="mt-4 text-center text-sm text-teal-600">
-              Do not have an account?{" "}
-              <Link href="/register" className="text-teal-800 hover:underline">
-                Create an account
-              </Link>
-            </p>
           </CardFooter>
         </form>
       </Card>

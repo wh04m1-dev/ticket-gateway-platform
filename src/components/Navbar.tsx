@@ -109,7 +109,7 @@ export default function Navbar() {
             {pathname !== "/apidoc" && (
               <>
                 <a
-                  href="#"
+                  href="/register"
                   className="font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 bg-teal-600 text-white"
                 >
                   Register
