@@ -10,7 +10,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 p-4 border-b bg-background">
+    <header className="max-w-7xl mx-auto sticky top-0 z-50 p-4 border-b bg-background">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-4">
           <button
