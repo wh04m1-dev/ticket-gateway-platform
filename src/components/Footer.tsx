@@ -91,7 +91,7 @@ function FooterList({ title, items }: { title: string; items: string[] }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300">
+    <footer>
       <div className="mx-auto max-w-screen-xl px-6 py-12 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Contact */}
