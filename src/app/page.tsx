@@ -5,16 +5,19 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Ticket Gateway Platform - Book Events Seamlessly</title>
+        <title>
+          Ticket Gateway Platform by Seng Chanthea – Book Events Seamlessly
+        </title>
         <meta
           name="description"
-          content="Easily discover and book tickets for events. Secure payment and instant QR code delivery."
+          content="Ticket Gateway Platform developed by Seng Chanthea. Discover and book tickets for events with ease. Secure payment and instant QR code delivery."
         />
+        <meta name="author" content="Seng Chanthea" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Ticket Gateway Platform" />
+        <meta property="og:title" content="Ticket Gateway by Seng Chanthea" />
         <meta
           property="og:description"
-          content="Find and book tickets for concerts, sports, and more."
+          content="Platform built by Seng Chanthea. Book tickets for concerts, sports, and more."
         />
         <meta
           property="og:url"
@@ -28,6 +31,25 @@ export default function Home() {
           <FrequentlyAskedQuestions />
         </main>
       </div>
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Seng Chanthea",
+            "jobTitle": "Software Developer",
+            "url": "https://ticket-gateway-platform.vercel.app",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Ticket Gateway Platform"
+            },
+            "sameAs": [
+              "https://github.com/sengchanthea",
+              "https://linkedin.com/in/sengchanthea"
+            ]
+          }
+        `}
+      </script>
     </>
   );
 }
