@@ -1,5 +1,9 @@
 "use client";
 
+interface NavigationMenuDemoProps {
+  mobile?: boolean;
+}
+
 import * as React from "react";
 import Link from "next/link";
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
@@ -52,10 +56,10 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export function NavigationMenuDemo() {
+export function NavigationMenuDemo({ mobile }: NavigationMenuDemoProps) {
   return (
     <NavigationMenu viewport={false}>
-      <NavigationMenuList>
+      <NavigationMenuList className={mobile ? "flex-col space-y-2" : "flex-row"}>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Home</NavigationMenuTrigger>
           <NavigationMenuContent>
