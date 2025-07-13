@@ -7,19 +7,43 @@ export default function APIDoc() {
     <div className="flex flex-col md:flex-row min-h-screen w-full">
       {/* Sidebar */}
       <aside className="w-full md:w-64 bg-white border-r border-gray-200 p-6">
-        <ul className="space-y-4 text-gray-800 font-medium">
-          <li>Prologue</li>
-          <li>Getting Started</li>
-          <li>Architecture Concepts</li>
-          <li>The Basics</li>
-          <li>Digging Deeper</li>
-          <li>Security</li>
-          <li>Database</li>
-          <li>Eloquent ORM</li>
-          <li>Testing</li>
-          <li>Packages</li>
-          <li className="font-bold text-black">API Documentation</li>
-          <li>Changelog</li>
+        <ul className="space-y-3 text-gray-800 font-medium">
+          {/* Documentation Section */}
+          <li className="text-xs font-semibold uppercase text-gray-500 tracking-wider mb-1">
+            Documentation
+          </li>
+          <li className="pl-2 hover:text-black cursor-pointer">Prologue</li>
+          <li className="pl-2 hover:text-black cursor-pointer">
+            Getting Started
+          </li>
+          <li className="pl-2 hover:text-black cursor-pointer">
+            Architecture Concepts
+          </li>
+          <li className="pl-2 hover:text-black cursor-pointer">The Basics</li>
+          <li className="pl-2 hover:text-black cursor-pointer">
+            Digging Deeper
+          </li>
+          <li className="pl-2 hover:text-black cursor-pointer">Security</li>
+          <li className="pl-2 hover:text-black cursor-pointer">Database</li>
+          <li className="pl-2 hover:text-black cursor-pointer">Eloquent ORM</li>
+          <li className="pl-2 hover:text-black cursor-pointer">Testing</li>
+          <li className="pl-2 hover:text-black cursor-pointer">Packages</li>
+          <li className="pl-2 font-bold text-black cursor-pointer">
+            API Documentation
+          </li>
+          <li className="pl-2 hover:text-black cursor-pointer">Changelog</li>
+
+          {/* Divider */}
+          <li className="mt-6 text-xs font-semibold uppercase text-gray-500 tracking-wider">
+            Developers
+          </li>
+          <li className="pl-2 hover:text-black cursor-pointer">
+            API Integration
+          </li>
+          <li className="pl-2 hover:text-black cursor-pointer">
+            Integration Guideline
+          </li>
+          <li className="pl-2 hover:text-black cursor-pointer">Bug Fixing</li>
         </ul>
       </aside>
 
@@ -35,15 +59,13 @@ export default function APIDoc() {
         </p>
         <p className="text-gray-700 mb-4">
           Laravel strives to provide an amazing developer experience while
-          providing powerful features such as thorough dependency injection, an
-          expressive database abstraction layer, queues and scheduled jobs, unit
-          and integration testing, and more.
+          offering powerful features like dependency injection, a robust ORM,
+          queues, scheduled jobs, and seamless testing.
         </p>
         <p className="text-gray-700">
-          Whether you are new to PHP web frameworks or have years of experience,
-          Laravel is a framework that can grow with you. We&apos;ll help you take
-          your first steps as a web developer or give you a boost as you take
-          your expertise to the next level. We can&apos;t wait to see what you build.
+          Whether you&apos;re new to PHP or already experienced, Laravel can grow
+          with you. We&apos;re here to support your journey as a web developer and
+          empower you to build outstanding applications.
         </p>
       </main>
     </div>
