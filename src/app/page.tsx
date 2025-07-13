@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
+        <meta name="google-site-verification" content="isYe_fh1qMxNsO4WG8XRDNLNz3Rkw8Q3v4PX6hdId_w" />
         <title>
           Ticket Gateway Platform by Seng Chanthea – Book Events Seamlessly
         </title>
