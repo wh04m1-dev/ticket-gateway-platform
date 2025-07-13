@@ -17,6 +17,7 @@ import {
   IconSearch,
   IconSettings,
   IconUsers,
+  type Icon as TablerIconType,
 } from "@tabler/icons-react";
 
 import { NavDocuments } from "@/components/nav-documents";
@@ -32,6 +33,28 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+
+export type TablerIcon = React.ForwardRefExoticComponent<
+  Omit<React.ComponentProps<TablerIconType>, "ref"> &
+    React.RefAttributes<SVGSVGElement>
+>;
+
+export interface NavItem {
+  title: string;
+  url: string;
+  icon: TablerIcon;
+  isActive?: boolean;
+  items?: {
+    title: string;
+    url: string;
+  }[];
+}
+
+interface DocumentItem {
+  name: string;
+  url: string;
+  icon: TablerIcon;
+}
 
 const data = {
   user: {
@@ -65,7 +88,7 @@ const data = {
       url: "#",
       icon: IconUsers,
     },
-  ],
+  ] as NavItem[],
   navClouds: [
     {
       title: "Capture",
@@ -113,7 +136,7 @@ const data = {
         },
       ],
     },
-  ],
+  ] as NavItem[],
   navSecondary: [
     {
       title: "Settings",
@@ -130,7 +153,7 @@ const data = {
       url: "#",
       icon: IconSearch,
     },
-  ],
+  ] as NavItem[],
   documents: [
     {
       name: "Data Library",
@@ -147,7 +170,7 @@ const data = {
       url: "#",
       icon: IconFileWord,
     },
-  ],
+  ] as DocumentItem[],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
