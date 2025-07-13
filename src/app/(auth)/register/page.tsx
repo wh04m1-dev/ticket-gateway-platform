@@ -5,7 +5,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -21,10 +20,9 @@ import { toast } from "sonner";
 
 export default function RegisterPage() {
   const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
-  const [name, setName] = useState("");
+  const [organization, setOrganization] = useState("");
+  const [project, setProject] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -35,9 +33,9 @@ export default function RegisterPage() {
 
     try {
       await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/register`, {
-        name,
+        organization,
+        project,
         email,
-        password,
       });
 
       toast.success("Account created", {
@@ -63,12 +61,8 @@ export default function RegisterPage() {
     <div className="flex items-center justify-center p-18">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">
-            Create an account
-          </CardTitle>
-          <CardDescription>
-            Enter your details to register for a new account
-          </CardDescription>
+          <CardTitle className="text-2xl font-bold">Register</CardTitle>
+          <CardDescription>Please fill in your information</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
@@ -78,13 +72,25 @@ export default function RegisterPage() {
               </div>
             )}
             <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
+              <Label htmlFor="organization">Organization</Label>
               <Input
-                id="name"
+                id="organization"
                 type="text"
-                placeholder="John Doe"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                placeholder="Where do you work?"
+                value={organization}
+                onChange={(e) => setOrganization(e.target.value)}
+                required
+                className="focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="project">Project</Label>
+              <Input
+                id="project"
+                type="text"
+                placeholder="What project are you working on?"
+                value={project}
+                onChange={(e) => setProject(e.target.value)}
                 required
                 className="focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
               />
@@ -94,47 +100,20 @@ export default function RegisterPage() {
               <Input
                 id="email"
                 type="email"
-                placeholder="name@example.com"
+                placeholder="Your example"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <div className="relative">
-                <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="focus:border-teal-500 focus:ring-2 pr-10"
-                />
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="icon"
-                  className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent text-teal-600 hover:text-teal-800"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
-                  <span className="sr-only">
-                    {showPassword ? "Hide password" : "Show password"}
-                  </span>
-                </Button>
-              </div>
-              <p className="text-xs text-gray-500 mt-1">
-                Password must be at least 8 characters long
-              </p>
-            </div>
           </CardContent>
+          <p className="mt-4 text-start ml-6 text-sm">
+            Token expired?{" "}
+            <Link href="/login" className="text-teal-800 hover:underline">
+              Renew
+            </Link>
+          </p>
           <CardFooter className="flex flex-col mt-4">
             <Button
               type="submit"
@@ -163,12 +142,6 @@ export default function RegisterPage() {
                 "Create account"
               )}
             </Button>
-            <p className="mt-4 text-center text-sm text-teal-600">
-              Already have an account?{" "}
-              <Link href="/login" className="text-teal-800 hover:underline">
-                Sign in
-              </Link>
-            </p>
           </CardFooter>
         </form>
       </Card>
