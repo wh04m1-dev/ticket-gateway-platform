@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ticket-gateway-platform.vercel.app
+
+# Sitemaps
+Sitemap: https://ticket-gateway-platform.vercel.app/sitemap.xml
