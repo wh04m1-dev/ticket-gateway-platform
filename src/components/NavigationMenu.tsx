@@ -19,39 +19,28 @@ import {
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Getting Started",
+    href: "/docs/getting-started",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Begin your journey with Kubernetes. Learn how to install, configure, and run your first cluster.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Core Concepts",
+    href: "/docs/core-concepts",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Understand Kubernetes architecture, objects, and the control plane components.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Workloads & Scheduling",
+    href: "/docs/workloads",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Learn how to deploy, scale, and manage applications using Deployments, Pods, and Jobs.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Networking & Services",
+    href: "/docs/networking",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Discover how services, DNS, ingress, and network policies work in Kubernetes.",
   },
 ];
 
@@ -63,7 +52,7 @@ export function NavigationMenuDemo({ mobile }: NavigationMenuDemoProps) {
       >
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/">Home</Link>
+            <Link href="/" aria-label="Go to home page">Home</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -96,25 +85,25 @@ export function NavigationMenuDemo({ mobile }: NavigationMenuDemoProps) {
               <li>
                 <NavigationMenuLink asChild>
                   <Link href="#">
-                    <div className="font-medium">Components</div>
+                    <div className="font-medium">Become a Partner</div>
                     <div className="text-muted-foreground">
-                      Browse all components in the library.
+                      Join us and grow your business with our platform.
                     </div>
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link href="#">
-                    <div className="font-medium">Documentation</div>
+                    <div className="font-medium">RESTful API</div>
                     <div className="text-muted-foreground">
-                      Learn how to use the library.
+                      Integrate seamlessly using our developer-friendly API.
                     </div>
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link href="#">
-                    <div className="font-medium">Blog</div>
+                    <div className="font-medium">Customize</div>
                     <div className="text-muted-foreground">
-                      Read our latest blog posts.
+                      Tailor the experience to match your brand and needs.
                     </div>
                   </Link>
                 </NavigationMenuLink>
@@ -136,7 +125,7 @@ function ListItem({
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link href={href}>
+        <Link href={href} passHref>
           <div className="text-sm leading-none font-medium">{title}</div>
           <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
             {children}
