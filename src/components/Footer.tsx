@@ -67,11 +67,11 @@ export default function Footer() {
 
       <div className="border-t border-gray-700 my-6"></div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between text-xs space-y-4 md:space-y-0">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start text-xs space-y-4 md:space-y-0 text-center md:text-left">
         <div className="space-y-1">
           <p>Copyright © - 2025</p>
         </div>
-        <div className="space-y-1 text-right">
+        <div className="space-y-1 md:text-right">
           <p>Terms and Conditions | Privacy & Policy | Legal Notice</p>
         </div>
       </div>
