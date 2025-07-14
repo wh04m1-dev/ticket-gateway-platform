@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { NavigationMenuDemo } from "@/components/NavigationMenu";
 import { ModeToggle } from "@/components/ModeToggle";
@@ -13,13 +14,13 @@ export default function Navbar() {
     <header className="max-w-7xl mx-auto sticky top-0 z-50 p-4 border-b bg-background">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <button
+          <Button
             className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </Button>
 
           <h2 className="text-lg font-semibold">Ticket Gateway Platform</h2>
         </div>
@@ -30,18 +31,25 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2">
           <ModeToggle />
-          <Button variant="outline" className="hidden sm:inline-flex">
-            Register
-          </Button>
+
+          {/* Separate Link wrapping only Button */}
+          <Link href="/register" passHref>
+              <Button variant="outline" className="hidden sm:inline-flex">
+                Register
+              </Button>
+          </Link>
         </div>
       </div>
 
+      {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden mt-4 pb-4 space-y-4">
           <NavigationMenuDemo mobile />
-          <Button variant="outline" className="w-full">
-            Register
-          </Button>
+          <Link href="/register" passHref>
+              <Button variant="outline" className="hidden sm:inline-flex">
+                Register
+              </Button>
+          </Link>
         </div>
       )}
     </header>

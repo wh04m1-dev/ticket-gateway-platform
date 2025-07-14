@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 
-import Seo from "@/components/Seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 const geistSans = Geist({
@@ -47,11 +46,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Seo
-            title="Buy Tickets Online | Ticket Gateway"
-            description="Buy event tickets online easily. Fast, secure, and trusted ticket booking platform."
-            url="https://ticket-gateway-platform.vercel.app"
-          />
           <Navbar />
           {children}
           <Footer />
