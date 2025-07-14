@@ -22,7 +22,7 @@ export default function Navbar() {
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
 
-          <h2 className="text-lg font-semibold">Ticket Gateway Platform</h2>
+          <h2 className="text-lg font-semibold">Ticket Gateway</h2>
         </div>
 
         <nav className="hidden md:flex">
