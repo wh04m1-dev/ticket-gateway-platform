@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ticket Gateway Platform",
+  title: "MyAPI Gateway",
   description: "Book tickets, manage events, and more on our platform.",
   keywords: ["tickets", "events", "booking", "ticket gateway"],
   openGraph: {
-    title: "Ticket Gateway Platform",
+    title: "MyAPI Gateway",
     description: "Easily book your event tickets.",
     url: "https://ticket-gateway-platform.vercel.app",
     type: "website",
