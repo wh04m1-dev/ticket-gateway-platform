@@ -51,7 +51,7 @@ ticket-gateway-platform/
 - Build Docker images
 - Push Docker images to Docker Hub
 - Deploy to Kubernetes on Contabo VPS using Helm
-- Notify via Slack/email (optional)
+- notification via telegram bot
 
 ⚙️ Deployment Target:
 
