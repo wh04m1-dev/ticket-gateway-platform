@@ -24,7 +24,7 @@ export default function Navbar() {
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
 
-          <h2 className="text-lg font-semibold">Ticket Gateway</h2>
+          <h2 className="text-lg font-semibold">MyAPI Gateway</h2>
         </div>
 
         {/* Desktop Navigation */}

@@ -6,10 +6,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <meta name="google-site-verification" content="isYe_fh1qMxNsO4WG8XRDNLNz3Rkw8Q3v4PX6hdId_w" />
-        <title>
-          MyAPI Gateway
-        </title>
+        <meta
+          name="google-site-verification"
+          content="isYe_fh1qMxNsO4WG8XRDNLNz3Rkw8Q3v4PX6hdId_w"
+        />
+        <title>MyAPI Gateway</title>
         <meta
           name="description"
           content="Ticket Gateway Platform. Discover and book tickets for events with ease. Secure payment and instant QR code delivery."
