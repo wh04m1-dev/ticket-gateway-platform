@@ -103,10 +103,10 @@ export default function TicketCard(props: TicketProps) {
           </div>
           <div className="text-center">
             <QRCodeCanvas value={ticketId} size={100} />
-            <QRCodeCanvas
+            {/* <QRCodeCanvas
               value={`https://yourdomain.com/ticket/${ticketId}`}
               size={100}
-            />
+            /> */}
             <p className="text-xs mt-2 text-gray-500">Scan for Entry</p>
           </div>
         </div>
