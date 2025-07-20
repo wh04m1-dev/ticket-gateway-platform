@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -33,11 +31,6 @@ export default function RegisterPage() {
         <CardHeader>
           <CardTitle>Create your account</CardTitle>
           <CardDescription>Enter your email.</CardDescription>
-          <CardAction>
-            <Link href="/login">
-              <Button variant="link">Login</Button>
-            </Link>
-          </CardAction>
         </CardHeader>
 
         <form onSubmit={handleSubmit}>
