@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: ticket-gateway-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+    networks:
+      - gateway-net
+
+  notify:
+    container_name: telegram-alert
+    build:
+      context: ./telegram
+    env_file:
+      - .env
+    command: ["node", "notify.js", "Deployment Successful!"]
+    networks:
+      - gateway-net
+
+networks:
+  gateway-net:
+    driver: bridge

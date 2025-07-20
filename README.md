@@ -1,5 +1,35 @@
 ```md
 
+# 🎟️ Ticket Gateway Platform
+
+## 1. Project Overview
+
+The **Ticket Gateway Platform** is a modern, secure, and scalable event ticketing solution optimized for both mobile and web platforms. It supports multiple user roles—**End Users, Event Organizers, and Admins**—enabling seamless event discovery, ticket booking, secure payment processing, and centralized administration.
+
+---
+
+## 2. Technology Stack
+
+| Layer             | Technology                                     |
+| ----------------- | ---------------------------------------------- |
+| Mobile Frontend   | Flutter                                        |
+| Web Frontend      | Next.js (TypeScript + Tailwind CSS)            |
+| Backend           | Spring Boot Microservices (REST APIs)          |
+| Authentication    | Keycloak (OAuth2 / OpenID Connect) + reCAPTCHA |
+| Containerization  | Docker                                         |
+| Orchestration     | Kubernetes (Contabo VPS)                       |
+| Messaging         | RabbitMQ                                       |
+| Database          | PostgreSQL                                     |
+| API Gateway       | Spring Cloud Gateway                           |
+| CI/CD             | Jenkins + ArgoCD (GitOps)                      |
+| Monitoring        | Prometheus, Grafana, Loki                      |
+| Security Scanning | Trivy, OWASP Dependency-Check, OWASP ZAP       |
+| Code Quality      | SonarQube                                      |
+| Container UI      | Portainer                                      |
+| Notification      | Telegram Bot (CI/CD Alerts)                    |
+
+---
+
 ## 3. System Architecture
 
 ### 3.1 Microservices Design
@@ -26,6 +56,21 @@
 3. Booking Service reserves tickets and emits events.
 4. Notification Service listens and dispatches email/SMS alerts.
 5. Payment Service confirms transactions via third-party gateway.
+
+---
+
+## 4. Infrastructure & Deployment
+
+- **Kubernetes:** High-availability cluster on Contabo VPS (≥3 nodes).
+- **Ingress:** NGINX with Cert-Manager (automated HTTPS via Let's Encrypt).
+- **Stateful Services:** PostgreSQL and Keycloak with persistent volumes (StatefulSets).
+- **Messaging:** RabbitMQ runs as a Kubernetes cluster.
+- **Helm Charts:** Package all services with environment-specific configs.
+- **CI/CD:**
+  - **Jenkins** builds, tests, and pushes Docker images.
+  - **ArgoCD** deploys services using GitOps workflows.
+- **Namespaces:** Logical separation for `dev`, `staging`, and `prod`.
+- **Portainer:** Web UI for managing containers and K8s resources.
 
 ---
 
@@ -56,7 +101,7 @@
 
 ## 7. CI/CD Pipeline Overview
 
-### Build & Deploy Steps
+### 🔧 Build & Deploy Steps
 
 - **Flutter App:**
   - Build → Test → Generate APK → Deploy to Play Store.
@@ -65,7 +110,7 @@
 - **Microservices (Spring Boot):**
   - Compile → Test → Dockerize → Deploy via Helm & ArgoCD.
 
-### DevSecOps Pipeline
+### 🔐 DevSecOps Pipeline
 
 | Stage       | Tool                   | Purpose                                   |
 | ----------- | ---------------------- | ----------------------------------------- |
@@ -124,25 +169,25 @@ v
 
 ## 10. DevSecOps Toolchain Summary
 
-| Tool             | Purpose                                    | CI/CD Phase |
-| ---------------- | ------------------------------------------ | ----------- |
-| **reCAPTCHA**    | Prevent bots on frontend forms             | Runtime     |
-| **Portainer**    | Manage Docker/Kubernetes containers via UI | Infra Ops   |
-| **SonarQube**    | Analyze code quality & security            | Build       |
-| **Trivy**        | Docker image vulnerability scanning        | Post-build  |
-| **OWASP DC**     | Dependency vulnerability scanner           | Build       |
-| **OWASP ZAP**    | Dynamic runtime vulnerability testing      | Post-deploy |
-| **Telegram Bot** | Notify about CI/CD status, security alerts | Any Stage   |
+| Tool         | Purpose                                    | CI/CD Phase |
+| ------------ | ------------------------------------------ | ----------- |
+| reCAPTCHA    | Prevent bots on frontend forms             | Runtime     |
+| Portainer    | Manage Docker/Kubernetes containers via UI | Infra Ops   |
+| SonarQube    | Analyze code quality & security            | Build       |
+| Trivy        | Docker image vulnerability scanning        | Post-build  |
+| OWASP DC     | Dependency vulnerability scanner           | Build       |
+| OWASP ZAP    | Dynamic runtime vulnerability testing      | Post-deploy |
+| Telegram Bot | Notify about CI/CD status, security alerts | Any Stage   |
 
 ---
 
 ## 11. Future Enhancements
 
-- ✅ Add distributed tracing with **Jaeger** or **Zipkin**
-- ✅ Integrate **HashiCorp Vault** for secure secrets management
-- ✅ Implement **K6** for load and performance testing
-- ✅ Enable **Audit Logging** for Admin and Booking actions
-- ✅ Set up **Sentry** for full-stack error monitoring
+- Add distributed tracing with Jaeger or Zipkin
+- Integrate HashiCorp Vault for secure secrets management
+- Implement K6 for load and performance testing
+- Enable Audit Logging for Admin and Booking actions
+- Set up Sentry for full-stack error monitoring
 
 ```
 

@@ -61,11 +61,6 @@ export default function TicketCard(props: TicketProps) {
       </div>
 
       <div className="p-6">
-        <div className="text-center mb-4">
-          <h2 className="text-2xl font-bold">Ticket Gateway</h2>
-          <p className="text-sm text-gray-500">Official Event Ticket</p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div>
             <p className="font-semibold">Event:</p>

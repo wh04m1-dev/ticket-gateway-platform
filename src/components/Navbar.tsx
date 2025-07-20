@@ -23,7 +23,9 @@ export default function Navbar() {
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
 
-          <h2 className="text-lg font-semibold">MyAPI Gateway</h2>
+          <Link href="/" passHref>
+            <h2 className="text-lg font-semibold">MyAPI Gateway</h2>
+          </Link>
         </div>
 
         <nav className="hidden md:flex">
