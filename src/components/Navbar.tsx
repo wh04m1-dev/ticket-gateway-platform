@@ -13,7 +13,6 @@ export default function Navbar() {
   return (
     <header className="max-w-7xl mx-auto sticky top-0 z-50 p-4 bg-background text-foreground dark:shadow-md">
       <div className="flex justify-between items-center">
-        {/* Logo & Menu Icon */}
         <div className="flex items-center gap-4">
           <Button
             className="md:hidden"
@@ -27,12 +26,10 @@ export default function Navbar() {
           <h2 className="text-lg font-semibold">MyAPI Gateway</h2>
         </div>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex">
           <NavigationMenuDemo />
         </nav>
 
-        {/* Right Controls (Dark Mode & Register) */}
         <div className="flex items-center gap-2">
           <ModeToggle />
 
@@ -44,7 +41,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden mt-4 pb-4 space-y-4">
           <NavigationMenuDemo mobile />

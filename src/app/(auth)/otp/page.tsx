@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
@@ -17,9 +17,10 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
-import router from "next/router";
 
 export default function ResetPasswordOTP() {
+  const router = useRouter();
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
       <Card className="w-full max-w-sm">
@@ -40,12 +41,9 @@ export default function ResetPasswordOTP() {
                     className="flex items-center space-x-2"
                   >
                     <InputOTPGroup>
-                      <InputOTPSlot index={0} />
-                      <InputOTPSlot index={1} />
-                      <InputOTPSlot index={2} />
-                      <InputOTPSlot index={3} />
-                      <InputOTPSlot index={4} />
-                      <InputOTPSlot index={5} />
+                      {[0, 1, 2, 3, 4, 5].map((i) => (
+                        <InputOTPSlot key={i} index={i} />
+                      ))}
                     </InputOTPGroup>
                   </InputOTP>
                 </div>
@@ -55,9 +53,9 @@ export default function ResetPasswordOTP() {
         </CardContent>
         <CardFooter className="flex-col gap-2">
           <Button
-            type="submit"
+            type="button"
             className="w-full"
-            onClick={() => router.push("/dashboard")}
+            onClick={() => router.push("/password")}
           >
             Submit
           </Button>

@@ -15,20 +15,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import router from "next/router";
 
-export default function ForgotPassPage() {
+export default function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle>Forgot your password?</CardTitle>
+          <CardTitle>Login to your account</CardTitle>
           <CardDescription>
-            Enter your email below and we&apos;ll send a password reset link.
+            Enter your email below to login to your account
           </CardDescription>
           <CardAction>
-            <Link href="/login">
-              <Button variant="link">Login</Button>
+            <Link href="/register">
+              <Button variant="link">Sign Up</Button>
             </Link>
           </CardAction>
         </CardHeader>
@@ -36,24 +35,23 @@ export default function ForgotPassPage() {
           <form>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Your Email"
-                  required
-                />
+                <div className="flex items-center">
+                  <Label htmlFor="password">Password</Label>
+                </div>
+                <Input id="password" type="password" required />
+              </div>
+              <div className="grid gap-2">
+                <div className="flex items-center">
+                  <Label htmlFor="confirm-password">Confirm Password</Label>
+                </div>
+                <Input id="confirm-password" type="password" required />
               </div>
             </div>
           </form>
         </CardContent>
         <CardFooter className="flex-col gap-2">
-          <Button
-            type="submit"
-            className="w-full"
-            onClick={() => router.push("/dashboard")}
-          >
-            Submit
+          <Button type="submit" className="w-full">
+            Login
           </Button>
         </CardFooter>
       </Card>
